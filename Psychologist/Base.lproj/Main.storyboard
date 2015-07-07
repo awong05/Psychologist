@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="-401" y="765"/>
         </scene>
-        <!--Happiness View Controller-->
+        <!--Diagnosed Happiness View Controller-->
         <scene sceneID="bNb-9N-fHf">
             <objects>
-                <viewController id="Xbh-ho-c3k" customClass="HappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xbh-ho-c3k" customClass="DiagnosedHappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MKz-9k-aOK"/>
                         <viewControllerLayoutGuide type="bottom" id="Ac2-Ed-CCl"/>
@@ -157,7 +157,15 @@
                             <constraint firstItem="c5z-Ia-CrY" firstAttribute="top" secondItem="zfl-T7-Qpe" secondAttribute="top" id="nN3-d6-OP2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hJs-gx-cpL"/>
+                    <navigationItem key="navigationItem" id="hJs-gx-cpL">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="zEW-yK-bWk">
+                            <connections>
+                                <segue destination="f7U-lP-Njd" kind="popoverPresentation" identifier="Show Diagnostic History" popoverAnchorBarButtonItem="zEW-yK-bWk" id="onn-wW-VoF">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="faceView" destination="c5z-Ia-CrY" id="di2-VQ-rrw"/>
                     </connections>
@@ -170,6 +178,42 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1010" y="1132"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="y8D-3H-x8P">
+            <objects>
+                <viewController id="f7U-lP-Njd" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X75-e8-aN7"/>
+                        <viewControllerLayoutGuide type="bottom" id="EZd-7M-WKW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wxi-zO-uAs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-2P-5It">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rZG-2P-5It" firstAttribute="top" secondItem="wxi-zO-uAs" secondAttribute="top" id="FaJ-OA-goR"/>
+                            <constraint firstItem="rZG-2P-5It" firstAttribute="leading" secondItem="wxi-zO-uAs" secondAttribute="leading" id="VeC-ar-PsW"/>
+                            <constraint firstItem="rZG-2P-5It" firstAttribute="bottom" secondItem="EZd-7M-WKW" secondAttribute="top" id="Yvg-V5-h9a"/>
+                            <constraint firstAttribute="trailing" secondItem="rZG-2P-5It" secondAttribute="trailing" id="a0J-bN-T3R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="rZG-2P-5It" id="Lnz-lD-ZyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GrG-w7-OKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="1132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mmZ-kC-uoG">
